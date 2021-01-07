@@ -1,0 +1,22 @@
+{
+  "name": "ppdb-bekasi-status",
+  "version": "1.0.0",
+  "description": "Aplikasi web yang mengambil data json dan menampilkannya ke web secara real-time",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Up-Dev/ppdb-bekasi-status.git"
+  },
+  "keywords": [
+    "ppdb"
+  ],
+  "author": "Ezra Khairan Permana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Team-Up-Dev/ppdb-bekasi-status/issues"
+  },
+  "homepage": "https://github.com/Team-Up-Dev/ppdb-bekasi-status#readme"
+}
