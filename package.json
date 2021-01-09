@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Team-Up-Dev/ppdb-bekasi-status#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "chokidar": "^3.5.0",
     "cors-anywhere": "^0.4.3",
