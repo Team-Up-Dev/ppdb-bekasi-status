@@ -7,7 +7,7 @@
     "server": "node server.js",
     "proxy": "node utils/proxy",
     "fetcher": "node utils/fetch",
-    "server-dev": "nodemon server.js",
+    "server-dev": "nodemon server.js --ignore \"json\"",
     "dev": "concurrently \"npm run proxy\" \"wait-on http://0.0.0.0:8080/ && npm run server-dev\"",
     "start": "concurrently \"npm run proxy\" \"wait-on http://0.0.0.0:8080/ && npm run fetcher & npm run server\""
   },
