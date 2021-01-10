@@ -14,6 +14,8 @@ const NM_PATH = path.resolve("node_modules"); // NM => Node Modules
 const JSON_PATH = path.resolve(config.JSON_PATH);
 const FULL_PATH = path.join(JSON_PATH, config.OUTPUT_FILE);
 
+const reader = require("./utils/reader");
+
 app.use(express.static(PUBLIC_PATH));
 app.use("/bs", express.static(path.join(NM_PATH, "bootstrap")));
 app.get("/", (req, res) => res.sendFile(path.join(PUBLIC_PATH, "index.html")));
@@ -24,6 +26,12 @@ server.listen(PORT, () =>
 );
 
 const Sock = socketIO(server);
-const watcher = chokidar.watch(FULL_PATH, { persistent: true });
+const watcher = chokidar.watch(FULL_PATH, { persistent: false });
 
-Sock.on("connection", (socc) => {});
+Sock.on("connection", (socc) => {
+  socc.emit("new:connection", { data: reader() });
+
+  watcher.on("change", () =>
+    socc.broadcast.emit("file:change", { data: reader() })
+  );
+});
